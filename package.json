@@ -1,8 +1,12 @@
 {
   "name": "faye-production",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Faye Server",
   "author": "David J <davidj@softcom.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidj-docker/faye-production.git"
+  },
   "license": "MIT",
   "main": "faye-server.js",
   "scripts": {

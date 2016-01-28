@@ -5,7 +5,7 @@ var http = require('http'),
 var options = {
     redisHost: process.env.FAYE_REDIS_HOST || 'localhost',
     redisPort: process.env.FAYE_REDIS_PORT || 6379,
-    listenPort: process.env.FAYE_PORT || 80,
+    listenPort: process.env.FAYE_PORT || 4242,
     mount: process.env.FAYE_MOUNT || '/stream',
     timeout: process.env.FAYE_TIMEOUT || 45,
     publishPassword: process.env.FAYE_PUBLISH_PASS || '',
@@ -30,6 +30,8 @@ var server = http.createServer(function(request, response) {
 		response.writeHead(401, {'Content-Type': 'text/plain'});
     	response.end('Unauthorized');
 	}
+
+	response.writeHead({'Allow-Origin': '*'});
 });
 
 bayeux.addExtension({
